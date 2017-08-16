@@ -190,17 +190,17 @@ int mts_main(int argc, char **argv) {
 
 	try {
 		/* An OpenGL context may be required for the GLU tesselator */
-		ref<Session> session = Session::create();
-		ref<Device> device = Device::create(session);
-		ref<Renderer> renderer = Renderer::create(session);
-		renderer->setLogLevel(ETrace);
-		renderer->setWarnLogLevel(ETrace);
+		//ref<Session> session = Session::create();
+		//ref<Device> device = Device::create(session);
+		//ref<Renderer> renderer = Renderer::create(session);
+		//renderer->setLogLevel(ETrace);
+		//renderer->setWarnLogLevel(ETrace);
 
-		session->init();
-		device->init();
-		renderer->init(device);
+		//session->init();
+		//device->init();
+		//renderer->init(device);
 
-		device->makeCurrent(renderer);
+		//device->makeCurrent(renderer);
 		ref<Timer> timer = new Timer();
 
 		retval = importMain(argc, argv);
@@ -208,9 +208,9 @@ int mts_main(int argc, char **argv) {
 		if (retval != -1)
 			cout << "Finished conversion (took " << timer->getMilliseconds() << " ms)" << endl;
 
-		renderer->shutdown();
-		device->shutdown();
-		session->shutdown();
+		//renderer->shutdown();
+		//device->shutdown();
+		//session->shutdown();
 	} catch(const XMLException &toCatch) {
 		cout << "Caught a Xerces exception: " <<
 			XMLString::transcode(toCatch.getMessage()) << endl;
