@@ -268,7 +268,8 @@ if (MTS_DEPENDENCIES AND NOT PYTHON_INCLUDE_DIR AND
   set(PYTHON_INCLUDE_DIR "${MTS_DEPS_DIR}/include/python27"
       CACHE STRING "Path to the Python include directory.")
 endif()
-find_package (PythonLibs "2.6")
+set( Python_ADDITIONAL_VERSIONS "3")
+find_package (PythonLibs)
 CMAKE_DEPENDENT_OPTION(BUILD_PYTHON "Build the Python bindings." ON
   "PYTHONLIBS_FOUND;mts_boost_PYTHON_FOUND" OFF)
 if (PYTHONLIBS_FOUND AND mts_boost_PYTHON_FOUND)
