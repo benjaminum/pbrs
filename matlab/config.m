@@ -1,6 +1,6 @@
 root_path = '.';
 cd(root_path);
-root_path = [pwd '/']; % set root path as full path
+root_path = fileparts(fileparts(mfilename('fullpath'))); % set root path as full path
 
 % mitsuba_path = [root_path '/mitsuba-af602c6fd98a/dist/'];
 mitsuba_path = []; % assume path has been added in system path
