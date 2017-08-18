@@ -1,6 +1,6 @@
 function convert_mtsb_template_standalone( path_to_id )
 config;
-addpath([root_path 'matlab/xmlModify']);
+addpath([root_path '/matlab/xmlModify']);
 serial_path = [path_to_id];
 
 fp = fopen(mapping_file);
@@ -180,6 +180,11 @@ fileFormatNode = xDoc.createElement('string');
 fileFormatNode.setAttribute('name', 'fileFormat');
 fileFormatNode.setAttribute('value', 'rgbe');
 filmNode.appendChild(fileFormatNode);
+
+highQualityEdgesNode = xDoc.createElement('boolean'):
+highQualityEdgesNode.setAttribute('value', 'true');
+filmNode.appendChild(highQualityEdgesNode);
+
 
 sensorElement.appendChild(filmNode);
 
